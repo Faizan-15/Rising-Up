@@ -1,0 +1,73 @@
+{
+    "programming_languages": [
+        "python",
+        "java",
+        "javascript",
+        "typescript",
+        "c++",
+        "c#",
+        "dart"
+    ],
+
+    "web_development": [
+        "html",
+        "css",
+        "react",
+        "angular",
+        "vue.js",
+        "node.js",
+        "express.js",
+        "flask",
+        "fastapi",
+        "django",
+        "bootstrap",
+        "tailwind css"
+    ],
+
+    "databases": [
+        "sql",
+        "oracle sql",
+        "mysql",
+        "postgresql",
+        "mongodb",
+        "sqlite",
+        "firebase",
+        "redis"
+    ],
+
+    "data_and_ai": [
+        "artificial intelligence",
+        "machine learning",
+        "deep learning",
+        "natural language processing",
+        "computer vision",
+        "data analysis",
+        "data science",
+        "pandas",
+        "numpy",
+        "scikit-learn",
+        "pytorch"
+    ],
+
+    "tools_and_cloud": [
+        "git",
+        "github",
+        "docker",
+        "linux",
+        "google cloud",
+        "visual studio code",
+        "postman"
+    ],
+
+    "soft_skills": [
+        "communication",
+        "teamwork",
+        "leadership",
+        "logical thinking",
+        "problem solving",
+        "critical thinking",
+        "time management",
+        "adaptability",
+        "creativity"
+    ]
+}
