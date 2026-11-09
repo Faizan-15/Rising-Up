@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AI Career Companion for resume and job analysis"
+    >
+
+    <title>AI Career Companion</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <main class="page-container">
+        <header class="hero">
+            <span class="badge">NLP-Powered Career Tool</span>
+
+            <h1>AI Career Companion</h1>
+
+            <p>
+                Compare your resume with a job description,
+                identify missing skills, and receive practical
+                career recommendations.
+            </p>
+        </header>
+
+        <section class="analyzer">
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="resumeText">
+                        Resume Text
+                    </label>
+
+                    <textarea
+                        id="resumeText"
+                        placeholder="Paste your resume text here..."
+                        maxlength="50000"
+                    ></textarea>
+
+                    <span id="resumeCount" class="character-count">
+                        0 characters
+                    </span>
+                </div>
+
+                <div class="input-group">
+                    <label for="jobDescription">
+                        Job Description
+                    </label>
+
+                    <textarea
+                        id="jobDescription"
+                        placeholder="Paste the job description here..."
+                        maxlength="50000"
+                    ></textarea>
+
+                    <span id="jobCount" class="character-count">
+                        0 characters
+                    </span>
+                </div>
+            </div>
+
+            <p
+                id="errorMessage"
+                class="error-message"
+                role="alert"
+            ></p>
+
+            <button id="analyzeButton" type="button">
+                Analyze Resume
+            </button>
+        </section>
+
+        <section
+            id="loadingSection"
+            class="loading-section hidden"
+            aria-live="polite"
+        >
+            <span class="loader"></span>
+            <p>Analyzing resume...</p>
+        </section>
+
+        <section id="resultsSection" class="results hidden">
+            <div class="section-heading">
+                <span>Analysis completed</span>
+                <h2>Career Compatibility Report</h2>
+            </div>
+
+            <div class="score-grid">
+                <article class="score-card primary-score">
+                    <span class="score-title">Overall Score</span>
+
+                    <strong id="overallScore">
+                        0%
+                    </strong>
+
+                    <div class="progress-track">
+                        <div
+                            id="overallProgress"
+                            class="progress-value"
+                        ></div>
+                    </div>
+                </article>
+
+                <article class="score-card">
+                    <span class="score-title">Skill Coverage</span>
+
+                    <strong id="skillScore">
+                        0%
+                    </strong>
+
+                    <div class="progress-track">
+                        <div
+                            id="skillProgress"
+                            class="progress-value"
+                        ></div>
+                    </div>
+                </article>
+
+                <article class="score-card">
+                    <span class="score-title">Text Similarity</span>
+
+                    <strong id="textSimilarity">
+                        0%
+                    </strong>
+
+                    <div class="progress-track">
+                        <div
+                            id="similarityProgress"
+                            class="progress-value"
+                        ></div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="skills-grid">
+                <article class="result-card">
+                    <div class="card-heading">
+                        <h3>Matched Skills</h3>
+                        <span
+                            id="matchedCount"
+                            class="count-badge success"
+                        >
+                            0
+                        </span>
+                    </div>
+
+                    <div
+                        id="matchedSkills"
+                        class="skill-container"
+                    ></div>
+                </article>
+
+                <article class="result-card">
+                    <div class="card-heading">
+                        <h3>Missing Skills</h3>
+                        <span
+                            id="missingCount"
+                            class="count-badge danger"
+                        >
+                            0
+                        </span>
+                    </div>
+
+                    <div
+                        id="missingSkills"
+                        class="skill-container"
+                    ></div>
+                </article>
+
+                <article class="result-card">
+                    <div class="card-heading">
+                        <h3>Additional Resume Skills</h3>
+                        <span
+                            id="additionalCount"
+                            class="count-badge information"
+                        >
+                            0
+                        </span>
+                    </div>
+
+                    <div
+                        id="additionalSkills"
+                        class="skill-container"
+                    ></div>
+                </article>
+
+                <article class="result-card">
+                    <div class="card-heading">
+                        <h3>Recognized Requirements</h3>
+                        <span
+                            id="requiredCount"
+                            class="count-badge neutral"
+                        >
+                            0
+                        </span>
+                    </div>
+
+                    <div
+                        id="requiredSkills"
+                        class="skill-container"
+                    ></div>
+                </article>
+            </div>
+
+            <article class="recommendation-card">
+                <span class="recommendation-label">
+                    AI Career Recommendation
+                </span>
+
+                <p id="recommendation"></p>
+            </article>
+        </section>
+
+        <footer>
+            <p>
+                The generated scores provide an automated NLP-based
+                comparison and do not represent a hiring decision.
+            </p>
+        </footer>
+    </main>
+
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
